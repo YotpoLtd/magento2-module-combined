@@ -7,7 +7,7 @@
         "AFL-3.0"
     ],
     "require": {
-        "yotpo/module-yotpo-messaging": "4.1.0",
+        "yotpo/module-yotpo-messaging": "dev-COR-FIX-adandoned-cart-url-issues",
         "yotpo/module-yotpo-reviews": "4.1.0"
     },
     "type": "magento2-module"
