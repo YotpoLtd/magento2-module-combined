@@ -1,14 +1,14 @@
 {
     "name": "yotpo/module-yotpo-combined",
     "description": "Yotpo marketing extension for Magento2",
-    "version": "4.0.26",
+    "version": "4.0.27",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
     ],
     "require": {
-        "yotpo/module-yotpo-messaging": "4.0.26",
-        "yotpo/module-yotpo-reviews": "4.0.26"
+        "yotpo/module-yotpo-messaging": "4.0.27",
+        "yotpo/module-yotpo-reviews": "4.0.27"
     },
     "type": "magento2-module"
 }
