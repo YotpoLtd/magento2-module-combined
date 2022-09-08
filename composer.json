@@ -10,5 +10,5 @@
         "yotpo/module-yotpo-messaging": "4.0.31",
         "yotpo/module-yotpo-reviews": "4.0.31"
     },
-    "type": "magento2-module"
+    "type": "metapackage"
 }
