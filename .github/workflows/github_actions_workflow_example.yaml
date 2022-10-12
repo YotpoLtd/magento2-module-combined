@@ -1,0 +1,31 @@
+name: Example Workflow
+on:
+  push:
+
+permissions:  ## <-- key part of the example
+  id-token: write
+  contents: read
+
+jobs:
+  my-personal-ci-workflow1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials  ## <-- key part of the example
+        uses: YotpoLtd/github-actions-aws-permissions@master
+
+      - name: Doing something in aws
+        run: |
+          echo "aws get-caller-identity:"
+          aws sts get-caller-identity
+
+
+  my-personal-ci-workflow2: ## every job that wants to interact with AWS will require to have the key part in it
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials  ## <-- key part of the example
+        uses: YotpoLtd/github-actions-aws-permissions@master
+
+      - name: Doing something in aws
+        run: |
+          echo "aws get-caller-identity:"
+          aws sts get-caller-identity
