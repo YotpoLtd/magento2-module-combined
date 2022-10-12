@@ -1,0 +1,19 @@
+name: Example Workflow
+on:
+  push:
+
+permissions:  ## <-- key part of the example
+  id-token: write
+  contents: read
+
+jobs:
+  my-personal-ci-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials  ## <-- key part of the example
+        uses: YotpoLtd/github-actions-oidc-permissions@master
+
+      - name: Doing something in aws
+        run: |
+          echo "aws get-caller-identity:"
+          aws sts get-caller-identity
