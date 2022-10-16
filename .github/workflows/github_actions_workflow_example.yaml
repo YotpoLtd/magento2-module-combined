@@ -1,0 +1,34 @@
+name: Example Workflow
+on:
+  push:
+    branches:    
+      - change_me
+
+permissions:  ## <-- Must have this to assume AWS permissions
+  id-token: write
+  contents: read
+
+jobs:
+  my-ci-workflow-job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials  ## <-- The step that authenticate the job to AWS
+        uses: YotpoLtd/github-actions-permissions/.github/actions/aws_credentials@master
+
+      - name: Doing something in aws- show my AWS role
+        run: aws sts get-caller-identity
+
+      - name: Doing something in aws - list S3 buckets + filter
+        run: aws s3 ls | grep -i test | head -n 1
+
+
+  my-ci-workflow-job2: ## Jobs that want to work with AWS need to authenticate separately
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials  ## <-- The step that authenticate the job to AWS
+        uses: YotpoLtd/github-actions-permissions/.github/actions/aws_credentials@master
+
+      - name: Doing something in aws
+        run: |
+          echo "So nice i'm doing the same twice"
+          aws sts get-caller-identity
