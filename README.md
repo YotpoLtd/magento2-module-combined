@@ -7,6 +7,8 @@ This library will also include different version packages as magento 2 extension
 
 Magento 2.3.3+ (Module version 4.0.0 and above)
 
+Magento 2.4.8 (Module version 4.3.3 and above)
+
 ### Install via composer ###
 
 Run the following command under your Magento 2 root dir:
