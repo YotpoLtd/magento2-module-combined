@@ -7,7 +7,7 @@
         "AFL-3.0"
     ],
     "require": {
-        "yotpo/module-yotpo-messaging": "4.3.4",
+        "yotpo/module-yotpo-messaging": "4.3.5",
         "yotpo/module-yotpo-reviews": "4.3.4"
     },
     "type": "metapackage"
