@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "matching": "If a path matches more than one tier's globs, the most restrictive tier applies: human-required > review-required > auto-safe.",
+  "tiers": {
+    "human-required": {
+      "description": "Agent CANNOT modify without a human. Prod-impacting or irreversible. Document for CODEOWNERS and agent instructions.",
+      "paths": [
+        "composer.json",
+        ".github/workflows/**",
+        ".agents/adlc/**",
+        "CODEOWNERS",
+        ".claude/protected-files.json"
+      ]
+    },
+    "review-required": {
+      "description": "Agent can modify but the PR requires human approval, including agent instructions/skills.",
+      "paths": [
+        "README.md",
+        "CLAUDE.md",
+        "AGENTS.md",
+        "ARCHITECTURE.md",
+        ".claude/**"
+      ]
+    },
+    "auto-safe": {
+      "description": "Agent can freely modify. Auto-merge eligible.",
+      "paths": [
+        "docs/**",
+        ".gitignore"
+      ]
+    }
+  }
+}

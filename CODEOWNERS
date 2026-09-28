@@ -1,1 +1,11 @@
-* @YotpoLtd/Orbits-admins
+# Only high-risk paths need a code-owner review: the human-required tier in
+# .claude/protected-files.json, plus the agent instruction files.
+# Everything else needs only the normal approval.
+
+/composer.json @YotpoLtd/Orbits-admins
+/.github/workflows/ @YotpoLtd/Orbits-admins
+/.agents/adlc/ @YotpoLtd/Orbits-admins
+/.claude/ @YotpoLtd/Orbits-admins
+/CLAUDE.md @YotpoLtd/Orbits-admins
+/AGENTS.md @YotpoLtd/Orbits-admins
+/CODEOWNERS @YotpoLtd/Orbits-admins
